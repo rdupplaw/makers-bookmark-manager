@@ -8,4 +8,4 @@ I want to see a list of my bookmarks.
 
 # Domain model
 
-![Domain model][./domain_model.png]
+![Domain model](/domain_model.png)
