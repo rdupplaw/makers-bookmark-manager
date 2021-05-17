@@ -8,6 +8,7 @@ gem "capybara"
 gem "rspec"
 gem "sinatra"
 gem "simplecov"
+gem "pg"
 
 group :development, :test do
   gem "rubocop", "0.79.0"
