@@ -3,6 +3,8 @@ require 'bookmark'
 describe Bookmark do
   describe '.all' do
     it 'returns a list of bookmarks' do
+      wipe_table
+      add_test_bookmarks
       bookmarks = Bookmark.all
 
       expect(bookmarks).to include('http://www.google.com')
