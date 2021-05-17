@@ -1,0 +1,29 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/willoughbyhood/Projects/makers-bookmark-manager/app.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/willoughbyhood/Projects/makers-bookmark-manager/spec/features/index_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1621258816
+  }
+}
