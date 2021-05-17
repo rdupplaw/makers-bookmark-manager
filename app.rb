@@ -1,7 +1,8 @@
 require "sinatra/base"
 
-class Hello < Sinatra::Base
+class BookmarkManager < Sinatra::Base
   get "/" do
-    "Hello, world"
+    erb(:index)
   end
+
 end
