@@ -79,7 +79,7 @@ DEPENDENCIES
   capybara
   pg
   rspec
-  rubocop (= 0.79.0)
+  rubocop
   simplecov
   sinatra
 

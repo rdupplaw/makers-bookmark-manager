@@ -1,7 +1,9 @@
-feature "index page" do
-  scenario "has content" do
+# frozen_string_literal: true
+
+feature 'index page' do
+  scenario 'has content' do
     wipe_table
     visit '/'
-    expect(page).to have_content("Bookmark Manager")
+    expect(page).to have_content('Bookmark Manager')
   end
 end

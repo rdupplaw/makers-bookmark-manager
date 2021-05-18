@@ -1,8 +1,11 @@
-require "sinatra/base"
+# frozen_string_literal: true
+
+require 'sinatra/base'
 require_relative './lib/bookmark'
 
+# Controller for bookmark manager application
 class BookmarkManager < Sinatra::Base
-  get "/" do
+  get '/' do
     erb(:index)
   end
 

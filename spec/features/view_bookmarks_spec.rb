@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Viewing bookmarks' do
   scenario 'User can view bookmarks' do
     wipe_table
