@@ -2,8 +2,8 @@
 
 def wipe_table
   con = PG.connect dbname: 'bookmark_manager_test'
-
-  con.exec 'TRUNCATE TABLE bookmarks'
+  con.exec 'DROP TABLE IF EXISTS bookmarks'
+  con.exec 'CREATE TABLE "bookmarks" ("id" SERIAL PRIMARY KEY, "url" VARCHAR(60));'
 end
 
 def add_test_bookmarks

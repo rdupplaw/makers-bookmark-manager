@@ -118,4 +118,9 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  # Empty bookmarks table before each test
+  config.before(:each) do
+    wipe_table
+  end
 end
