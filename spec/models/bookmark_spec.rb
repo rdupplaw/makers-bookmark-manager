@@ -3,10 +3,11 @@
 require 'bookmark'
 
 describe Bookmark do
-  describe '.all' do
+  describe '::all' do
     it 'returns an array of all bookmarks' do
       wipe_table
       add_test_bookmarks
+
       bookmarks = Bookmark.all
 
       expect(bookmarks).to include('http://www.google.com')
