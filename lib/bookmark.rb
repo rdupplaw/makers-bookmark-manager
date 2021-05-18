@@ -13,7 +13,7 @@ class Bookmark
 
     connection = PG.connect(dbname: database_name)
 
-    response = connection.exec 'SELECT * FROM bookmarks'
+    response = connection.exec('SELECT * FROM bookmarks;')
 
     response.map { |bookmark| bookmark['url'] }
   end
