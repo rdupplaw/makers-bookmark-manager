@@ -1,0 +1,8 @@
+@startuml
+client -> controller : get /bookmarks
+controller -> model : Bookmark.all
+model --> controller
+controller -> view : erb(:bookmarks)
+view -> controller : HTML
+controller -> client : response
+@enduml

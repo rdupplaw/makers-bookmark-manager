@@ -10,12 +10,26 @@ I want to see a list of my bookmarks.
 
 ![Domain model](/domain_model.png)
 
-## Installation
+# Installation
+
+```
+git clone https://github.com/rdupplaw/makers-bookmark-manager.git
+cd makers-bookmark-manager
+bundle
+```
+
+# Database configuration
 
 1. Connect to `psql`
 2. Create the database using the `psql` command `CREATE DATABASE bookmark_manager;`
 3. Connect to the database using the `psql` command `\c bookmark_manager;`
-4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
+4. Run the query in the file `01_create_bookmarks_table.sql`
 5. Create a test database using the `psql` command `CREATE DATABASE bookmark_manager_test;`
 6. Connect to the database using the `psql` command `\c bookmark_manager_test;`
-7. Run the same query saved in the file `01_create_bookmarks_table.sql`
+7. Run the query in the file `01_create_bookmarks_table.sql`
+
+# Usage
+
+```
+rackup
+```
