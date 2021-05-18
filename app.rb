@@ -6,7 +6,7 @@ require_relative './lib/bookmark'
 # Controller for bookmark manager application
 class BookmarkManager < Sinatra::Base
   get '/' do
-    erb(:index)
+    redirect('/bookmarks')
   end
 
   get '/bookmarks' do
