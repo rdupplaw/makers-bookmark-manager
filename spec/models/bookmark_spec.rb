@@ -4,7 +4,7 @@ require 'bookmark'
 
 describe Bookmark do
   describe '.all' do
-    it 'returns a list of bookmarks' do
+    it 'returns an array of all bookmarks' do
       wipe_table
       add_test_bookmarks
       bookmarks = Bookmark.all
