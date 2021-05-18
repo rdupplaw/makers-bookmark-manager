@@ -4,6 +4,10 @@
 As a user,
 so I can revisit my favourite websites,
 I want to see a list of my bookmarks.
+
+As a user,
+so I can store my favourite websites,
+I want to add a new bookmark.
 ```
 
 # Domain model

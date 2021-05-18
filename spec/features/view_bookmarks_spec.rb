@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 feature 'Viewing bookmarks' do
-  scenario 'User can view bookmarks' do
+  scenario 'A user can view bookmarks' do
     add_test_bookmarks
 
     visit '/bookmarks'
