@@ -11,10 +11,10 @@ class Bookmark
                       'bookmark_manager'
                     end
 
-    con = PG.connect dbname: database_name
+    connection = PG.connect dbname: database_name
 
-    rs = con.exec 'SELECT * FROM bookmarks'
+    response = connection.exec 'SELECT * FROM bookmarks'
 
-    rs.map { |bookmark| bookmark['url'] }
+    response.map { |bookmark| bookmark['url'] }
   end
 end
