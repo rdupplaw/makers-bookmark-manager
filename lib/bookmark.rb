@@ -11,7 +11,7 @@ class Bookmark
                       'bookmark_manager'
                     end
 
-    connection = PG.connect dbname: database_name
+    connection = PG.connect(dbname: database_name)
 
     response = connection.exec 'SELECT * FROM bookmarks'
 
