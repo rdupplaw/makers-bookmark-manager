@@ -2,12 +2,14 @@
 
 feature 'Viewing bookmarks' do
   scenario 'A user can view bookmarks' do
-    add_test_bookmarks
+    Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+    Bookmark.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy All Software')
+    Bookmark.create(url: 'http://www.google.com', title: 'Google')
 
     visit '/bookmarks'
 
-    expect(page).to have_link('search', href: 'http://www.google.com')
-    expect(page).to have_link('cool bootcamp', href: 'http://www.makersacademy.com')
-    expect(page).to have_link('tutorials', href: 'http://www.destroyallsoftware.com')
+    expect(page).to have_link('Makers Academy', href: 'http://www.makersacademy.com')
+    expect(page).to have_link('Destroy All Software', href: 'http://www.destroyallsoftware.com')
+    expect(page).to have_link('Google', href: 'http://www.google.com')
   end
 end
