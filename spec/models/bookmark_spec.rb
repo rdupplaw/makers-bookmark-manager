@@ -46,4 +46,17 @@ describe Bookmark do
       expect(bookmarks.first.url).to eq(bookmark2.url)
     end
   end
+
+  describe '::update' do
+    it 'updates a bookmark' do
+      bookmark = Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+
+      updated_bookmark = Bookmark.update(id: bookmark.id, title: 'Makers', url: 'https://makers.tech')
+
+      expect(updated_bookmark).to be_a Bookmark
+      expect(updated_bookmark.id).to eq bookmark.id
+      expect(updated_bookmark.title).to eq 'Makers'
+      expect(updated_bookmark.url).to eq 'https://makers.tech'
+    end
+  end
 end
