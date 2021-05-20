@@ -6,7 +6,7 @@ feature 'Deleting a bookmark' do
     Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
 
     visit '/bookmarks'
-    click_button("delete#{bookmark.id}")
+    first('.bookmark').click_button('delete')
 
     expect(page).not_to have_link('Google', href: 'http://www.google.com')
     expect(page).to have_link('Makers Academy', href: 'http://www.makersacademy.com')
