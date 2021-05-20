@@ -12,6 +12,10 @@ I want to add a new bookmark.
 As a user,
 so I can remove bookmarks I don't need,
 I want to delete a bookmark.
+
+As a user,
+so I can make changes and corrections,
+I want to update a bookmark.
 ```
 
 # Domain model
