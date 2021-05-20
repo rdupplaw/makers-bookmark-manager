@@ -8,6 +8,10 @@ I want to see a list of my bookmarks.
 As a user,
 so I can store my favourite websites,
 I want to add a new bookmark.
+
+As a user,
+so I can remove bookmarks I don't need,
+I want to delete a bookmark.
 ```
 
 # Domain model
