@@ -59,4 +59,17 @@ describe Bookmark do
       expect(updated_bookmark.url).to eq 'https://makers.tech'
     end
   end
+
+  describe '::find' do
+    it 'returns a specific bookmark' do
+      bookmark = Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+
+      result = Bookmark.find(id: bookmark.id)
+
+      expect(result).to be_a(Bookmark)
+      expect(result.id).to eq(bookmark.id)
+      expect(result.title).to eq('Makers Academy')
+      expect(result.url).to eq('http://www.makersacademy.com')
+    end
+  end
 end
