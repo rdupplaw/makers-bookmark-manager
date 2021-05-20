@@ -4,6 +4,10 @@
       <a href='<%= bookmark.url %>'>
         <%= bookmark.title %>
       </a>
+      <form action='/bookmarks/<%= bookmark.id %>' method='post'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='delete' id='delete<%= bookmark.id %>'>
+      </form>
     </li>
   <% end %>
 </ul>
