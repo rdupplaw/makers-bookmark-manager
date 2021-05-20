@@ -2,7 +2,7 @@
 
 feature 'Deleting a bookmark' do
   scenario 'A user can delete a bookmark' do
-    bookmark = Bookmark.create(url: 'http://www.google.com', title: 'Google')
+    Bookmark.create(url: 'http://www.google.com', title: 'Google')
     Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
 
     visit '/bookmarks'
