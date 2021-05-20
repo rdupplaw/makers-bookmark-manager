@@ -5,6 +5,8 @@ require_relative './lib/bookmark'
 
 # Controller for bookmark manager application
 class BookmarkManager < Sinatra::Base
+  enable :method_override
+
   get '/' do
     redirect('/bookmarks')
   end
@@ -20,6 +22,11 @@ class BookmarkManager < Sinatra::Base
 
   post '/bookmarks' do
     Bookmark.create(title: params[:title], url: params[:url])
+    redirect('/bookmarks')
+  end
+
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params['id'])
     redirect('/bookmarks')
   end
 end
