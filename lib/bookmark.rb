@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative './database_connection'
+require_relative './comment'
 
 # Imports bookmarks from database
 class Bookmark
@@ -44,7 +45,7 @@ class Bookmark
     url =~ /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/
   end
 
-  def comments
-    DatabaseConnection.query("SELECT * FROM comments WHERE bookmark_id=#{id}")
+  def comments(comment_class = Comment)
+    comment_class.where(bookmark_id: id)
   end
 end

@@ -13,8 +13,8 @@
       <a href='/bookmarks/<%= bookmark.id %>/comments/new'>add comment</a>
       <ul>
       <% bookmark.comments.each do |comment| %>
-        <li class='comment' id='comment-<%= comment['id'] %>'>
-          <%= comment['text'] %>
+        <li class='comment' id='comment-<%= comment.id %>'>
+          <%= comment.text %>
         </li>
       <% end %>
       </ul>
