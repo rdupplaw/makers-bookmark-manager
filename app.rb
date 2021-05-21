@@ -24,11 +24,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    if params[:url] =~ /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/
-      Bookmark.create(title: params[:title], url: params[:url])
-    else
-      flash[:error] = 'Error: Invalid URL'
-    end
+    flash[:error] = 'Error: Invalid URL' unless Bookmark.create(title: params[:title], url: params[:url])
     redirect('/bookmarks')
   end
 
