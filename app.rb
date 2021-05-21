@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require 'sinatra/flash'
 require_relative './lib/bookmark'
 require_relative './database_connection_setup'
 
 # Controller for bookmark manager application
 class BookmarkManager < Sinatra::Base
-  enable :method_override
+  enable :method_override, :sessions
+  register Sinatra::Flash
 
   get '/' do
     redirect('/bookmarks')
@@ -22,7 +24,11 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    Bookmark.create(title: params[:title], url: params[:url])
+    if params[:url] =~ /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/
+      Bookmark.create(title: params[:title], url: params[:url])
+    else
+      flash[:error] = 'Error: Invalid URL'
+    end
     redirect('/bookmarks')
   end
 
