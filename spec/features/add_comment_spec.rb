@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Adding a comment' do
   scenario 'A user can add a comment to a bookmark' do
     Bookmark.create(url: 'http://www.google.com', title: 'Google')

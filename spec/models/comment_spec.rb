@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'comment'
 
 describe Comment do
@@ -18,9 +20,9 @@ describe Comment do
   describe '::where' do
     it 'returns all comments with a given bookmark id' do
       bookmark = Bookmark.create(title: 'test bookmark', url: 'https://test.com')
-      comment = Comment.create(text: 'first test comment', bookmark_id: bookmark.id)
-      comment = Comment.create(text: 'second test comment', bookmark_id: bookmark.id)
-      comment = Comment.create(text: 'third test comment', bookmark_id: bookmark.id)
+      Comment.create(text: 'first test comment', bookmark_id: bookmark.id)
+      Comment.create(text: 'second test comment', bookmark_id: bookmark.id)
+      Comment.create(text: 'third test comment', bookmark_id: bookmark.id)
 
       result = Comment.where(bookmark_id: bookmark.id)
       persisted_data = DatabaseConnection.query("SELECT * FROM comments WHERE bookmark_id=#{bookmark.id};")
