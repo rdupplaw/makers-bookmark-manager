@@ -43,4 +43,8 @@ class Bookmark
   private_class_method def self.valid_url?(url)
     url =~ /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/
   end
+
+  def comments
+    DatabaseConnection.query("SELECT * FROM comments WHERE bookmark_id=#{id}")
+  end
 end

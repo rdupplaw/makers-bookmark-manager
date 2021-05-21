@@ -42,4 +42,14 @@ class BookmarkManager < Sinatra::Base
     Bookmark.update(id: params['id'], title: params['title'], url: params['url'])
     redirect '/bookmarks'
   end
+
+  get '/bookmarks/:id/comments/new' do
+    @bookmark_id = params[:id]
+    erb(:'comments/new')
+  end
+
+  post '/bookmarks/:id/comments' do
+    DatabaseConnection.query("INSERT INTO comments (text, bookmark_id) VALUES ('#{params[:text]}', #{params[:id]});")
+    redirect('/bookmarks')
+  end
 end
