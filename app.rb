@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require_relative './lib/bookmark'
+require_relative './lib/comment'
 require_relative './database_connection_setup'
 
 # Controller for bookmark manager application
@@ -49,7 +50,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks/:id/comments' do
-    DatabaseConnection.query("INSERT INTO comments (text, bookmark_id) VALUES ('#{params[:text]}', #{params[:id]});")
+    Comment.create(text: params[:text], bookmark_id: params[:id])
     redirect('/bookmarks')
   end
 end
